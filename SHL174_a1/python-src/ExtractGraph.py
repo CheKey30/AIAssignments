@@ -7,20 +7,23 @@ class ExtractGraph:
 
     def __init__(self):
         # Extract the directed weighted graph, and save to {head_word, {tail_word, probability}}
+        # open the data file and read sentences line by line
         file = open(self.sentences_add)
-        line = file.readline()
+        line = file.readline().strip()
+        # save the head_word tail_word count into the graph
         while line:
             tokens = line.split(' ')
             for i in range(len(tokens)-1):
-                if tokens[i] in self.graph:
-                    if tokens[i+1] in self.graph[tokens[i]]:
-                        self.graph[tokens[i]][tokens[i+1]]+=1
-                    else:
-                        self.graph[tokens[i]][tokens[i+1]]=1
-                else:
+                if tokens[i] not in self.graph:
                     self.graph[tokens[i]] = {}
-            line = file.readline()
+                if tokens[i+1] in self.graph[tokens[i]]:
+                    self.graph[tokens[i]][tokens[i+1]]+=1
+                else:
+                    self.graph[tokens[i]][tokens[i+1]]=1
 
+            line = file.readline().strip()
+
+        # calculate the probability of each head_word and its tail_word
         for key in self.graph.keys():
             total = 0
             for subkey in self.graph[key].keys():

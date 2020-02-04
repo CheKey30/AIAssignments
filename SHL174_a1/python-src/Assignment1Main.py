@@ -29,7 +29,7 @@ print(str(sentence_prob.score) + "\t" + sentence_prob.string)
 
 
 # Find the sentence with highest probability using beam search with sentence length-normalzation.
-param_lambda = 0.7
+param_lambda = 3
 beam_search = BeamSearch.BeamSearch(graph)
 sentence_prob = beam_search.beamSearchV2("<s>", 10, param_lambda, 20)
 print(str(sentence_prob.score) + "\t" + sentence_prob.string)
