@@ -70,7 +70,9 @@ The probability of "</s>" appearing after "." is 1.0
 -4.340667955161982e-15	<s> Israel and Jordan signed the peace process as well as well as well as well as well as well as well as well as well as well as well as well as well as well as well . </s>
 -4.218826172859362e-11	<s> It is expected to the past few years ago , which is expected to
 
-evaluation of the running result:
-based on the score function, we can tell that, with a really small or zero lambda, the score of a short sentence would be higher than the result of long sentence.
-That is why with lambda =0, the best sentences just add one word after the pre-word. With the increase of lambda, the long sentence would get a higher score than the short one. However, if lambda is too large, the best sentence would repeate
-several words again and again. So, lambda is imporant to generate a sutible sentence. According my experience, 3 is a good value in this case.
+discussion of the running result:
+Based on the score function, we can tell that, with a really small or zero lambda, the score of a short sentence would be higher than the score of long sentence. 
+That is why with lambda =0, the best sentences just add one word after the pre-word. 
+With the increase of lambda, the long sentence would get a higher score than the short one. That is why the best sentences are getting longer and longer In my tests.
+However, if lambda is too large, the best sentence would repeate several words again and again. 
+So, lambda is imporant to generate a sutible sentence. According my experience, 3 is a good value in this case.
