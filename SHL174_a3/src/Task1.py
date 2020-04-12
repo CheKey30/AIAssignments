@@ -5,9 +5,7 @@ from sklearn.linear_model import Lasso
 from sklearn.linear_model import Ridge
 import numpy as np
 from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsClassifier
 import warnings
 warnings.filterwarnings('ignore')
 
